@@ -1,6 +1,11 @@
 require ('dotenv').config();
 const express = require('express');
+const data = {
+    "name": "John",
+    "id":"89798",
+    "age": 25,
 
+}
 const app = express()// factory function
 
 
@@ -19,6 +24,11 @@ app.get('/youtube',(req,res)=>{
 
 app.get('/login',(req,res)=>{
     res.send('login page');
+})
+
+app.get('/github',(req,res)=>{
+    res.json(data);
+
 })
 //-----------------------------------------------------------
 app.listen(process.env.PORT , ()=>{
